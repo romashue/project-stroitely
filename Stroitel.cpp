@@ -5,6 +5,7 @@ using namespace sf;
 Stroitel::Stroitel() 
 {
     Stroitel_Texture.loadFromFile("Image/stroitel.png");
+    RectangleShape stroitel(Vector2f(150, 150));
     stroitel.setTexture(&Stroitel_Texture);
     stroitel.setPosition(350, 400);
 }
@@ -18,7 +19,6 @@ void Stroitel::rigth()
 void Stroitel::down()
 {
     stroitel.setPosition(700, 600);
-
 }
 
 void Stroitel::draw(RenderWindow& window)

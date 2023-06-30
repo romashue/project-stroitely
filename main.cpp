@@ -33,7 +33,12 @@ int main()
     svaya.setTexture(&svaya_texture);
     svaya.setPosition(550, 150);
     
-    Stroitel s;
+
+    Texture stroitel_texture;
+    stroitel_texture.loadFromFile("Image/stroitel.png");
+    RectangleShape stroitel(Vector2f(150,150));
+    stroitel.setTexture(&stroitel_texture);
+    stroitel.setPosition(350, 400);
 
     while (window.isOpen())
     {
@@ -46,18 +51,19 @@ int main()
 
         if (Keyboard::isKeyPressed(Keyboard::Right)) 
         {
-            s.rigth();
+            stroitel.setPosition(700, 270);
+            stroitel.setRotation(90);
         }
         if (Keyboard::isKeyPressed(Keyboard::Down))
         {
-            s.down();
+            stroitel.setPosition(700, 600);
             score += 1;
         }
 
         window.clear();
         window.draw(gamingbackground);
         window.draw(svaya);
-        s.draw(window);
+        window.draw(stroitel);
         window.display();
     }
 
